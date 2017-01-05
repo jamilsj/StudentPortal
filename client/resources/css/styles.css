@@ -623,7 +623,12 @@
 .help-iframe {
    margin:0px 15px 0px 15px;
 }
-
+.help-url {
+   overflow: hidden;
+   height: 100%; 
+   width: 100%;
+   position: absolute;
+}
 /* DATE PICKER TDS *************************************************/
 .x-sheet.x-picker .x-sheet-inner {
    background-color: #fff;
@@ -959,5 +964,6 @@
       float: left;
       height: 100%;
    }
+   .
 }
 

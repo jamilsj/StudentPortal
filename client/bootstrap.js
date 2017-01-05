@@ -673,7 +673,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "StudentPortal.controller.MyAbsences": [],
   "StudentPortal.controller.MyAttendance": [],
   "StudentPortal.controller.Profile": [],
-  "StudentPortal.controller.RegisterAttendance": [],
   "StudentPortal.controller.SwipeLog": [],
   "StudentPortal.custom.AbsenceLegend": [],
   "StudentPortal.custom.DatePickerTds": [],
@@ -697,9 +696,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "StudentPortal.model.MyAttendance": [],
   "StudentPortal.model.MyAttendanceDetail": [],
   "StudentPortal.model.Profile": [],
-  "StudentPortal.model.RegisterAttendance": [],
   "StudentPortal.model.SwipeLog": [],
-  "StudentPortal.model.TerminalComboList": [],
   "StudentPortal.store.AbsenceReason": [],
   "StudentPortal.store.DocumentType": [],
   "StudentPortal.store.MyAbsences": [],
@@ -707,10 +704,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "StudentPortal.store.MyAttendanceDetail": [],
   "StudentPortal.store.Profile": [],
   "StudentPortal.store.SwipeLog": [],
-  "StudentPortal.store.TerminalComboList": [],
   "StudentPortal.view.Help": [],
   "StudentPortal.view.Main": [],
-  "StudentPortal.view.Maps": [],
   "StudentPortal.view.Menu": [],
   "StudentPortal.view.MyAbsences": [],
   "StudentPortal.view.MyAbsencesList": [],
@@ -718,10 +713,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "StudentPortal.view.MyAttendanceDetail": [],
   "StudentPortal.view.MyAttendanceList": [],
   "StudentPortal.view.Profile": [],
-  "StudentPortal.view.RegisterAttendance": [],
   "StudentPortal.view.SwipeLog": [],
-  "StudentPortal.view.SwipeLogList": [],
-  "StudentPortal.view.TerminalList": []
+  "StudentPortal.view.SwipeLogList": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
@@ -1482,7 +1475,6 @@ Ext.ClassManager.addNameAliasMappings({
   "StudentPortal.controller.MyAbsences": [],
   "StudentPortal.controller.MyAttendance": [],
   "StudentPortal.controller.Profile": [],
-  "StudentPortal.controller.RegisterAttendance": [],
   "StudentPortal.controller.SwipeLog": [],
   "StudentPortal.custom.AbsenceLegend": [
     "widget.absencelegend"
@@ -1528,9 +1520,7 @@ Ext.ClassManager.addNameAliasMappings({
   "StudentPortal.model.MyAttendance": [],
   "StudentPortal.model.MyAttendanceDetail": [],
   "StudentPortal.model.Profile": [],
-  "StudentPortal.model.RegisterAttendance": [],
   "StudentPortal.model.SwipeLog": [],
-  "StudentPortal.model.TerminalComboList": [],
   "StudentPortal.store.AbsenceReason": [],
   "StudentPortal.store.DocumentType": [],
   "StudentPortal.store.MyAbsences": [],
@@ -1540,15 +1530,11 @@ Ext.ClassManager.addNameAliasMappings({
   "StudentPortal.store.SwipeLog": [
     "widget.SwipeLog"
   ],
-  "StudentPortal.store.TerminalComboList": [],
   "StudentPortal.view.Help": [
     "widget.help"
   ],
   "StudentPortal.view.Main": [
     "widget.mainview"
-  ],
-  "StudentPortal.view.Maps": [
-    "widget.maps"
   ],
   "StudentPortal.view.Menu": [
     "widget.mainmenu"
@@ -1571,17 +1557,11 @@ Ext.ClassManager.addNameAliasMappings({
   "StudentPortal.view.Profile": [
     "widget.profile"
   ],
-  "StudentPortal.view.RegisterAttendance": [
-    "widget.registerattendance"
-  ],
   "StudentPortal.view.SwipeLog": [
     "widget.swipelog"
   ],
   "StudentPortal.view.SwipeLogList": [
     "widget.swipeloglist"
-  ],
-  "StudentPortal.view.TerminalList": [
-    "widget.terminallist"
   ]
 });
 

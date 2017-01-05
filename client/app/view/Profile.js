@@ -47,23 +47,7 @@ Ext.define('StudentPortal.view.Profile', {
                         '</div>'+
                     '</span>'+
                  '</div>'+                 
-                 '<div class="row">'+
-                    '<span class="cell cell1">'+
-                       '<div class="flaticon-calendar146"></div>'+
-                    '</span>'+
-                    '<span class="cell cell2">'+
-                        '<div class="title-info"> date of birth</div>'+
-                        '<div class="box-info">'+
-                        '   <div>{date_of_birth}</div>'+
-                        '</div>'+
-                    '</span>'+
-                 '</div>'+                                  
               '</div>'+
            '</div>' + '</DIV>'
-   }, 
-   listener: {
-      load: function(){
-         debugger;
-      }
    }
 });

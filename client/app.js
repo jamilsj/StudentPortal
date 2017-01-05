@@ -19,7 +19,7 @@ Ext.application({
    ],
 
    controllers: [
-      'Main', 'Profile', 'SwipeLog', 'MyAttendance', 'MyAbsences','RegisterAttendance'
+      'Main', 'Profile', 'SwipeLog', 'MyAttendance', 'MyAbsences'
    ],
 
    views: [

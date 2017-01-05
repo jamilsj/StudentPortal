@@ -298,8 +298,8 @@ Ext.define('StudentPortal.controller.MyAbsences', {
 
    doMyAbsencesDelete: function (obj, e, opts) {
       var records = obj.up('myabsenceslistitem').getRecord();
-      var startDateFormated = StudentPortal.global.Util.isoDateString(records.get('start_date'));
-      var endDateFormated = StudentPortal.global.Util.isoDateString(records.get('end_date'));
+      var startDateFormated = records.get('start_date');
+      var endDateFormated = records.get('end_date');
       var me = this;
 
       Ext.Ajax.request({
