@@ -36,6 +36,12 @@ Ext.define('StudentPortal.view.Menu', {
             labelCls: 'menu-button',
             cls: 'item-menu'
          }, {
+            text: 'Register Attendance',
+            itemId: 'RegisterAttendance',
+            iconCls: 'compose',
+            labelCls: 'menu-button',
+            cls: 'item-menu'
+         }, {
             text: 'Help',
             itemId: 'help',
             iconCls: 'info',

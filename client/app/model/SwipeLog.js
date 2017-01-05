@@ -14,7 +14,7 @@ Ext.define('StudentPortal.model.SwipeLog', {
             type: 'time',
             convert: function (value, record) {
                var dt = new Date(value);
-               return value.split("T")[1].replace('Z','');
+               return Ext.Date.format(dt, 'H:i:s');
             }
          }, {
             name: 'device_description',
@@ -38,12 +38,7 @@ Ext.define('StudentPortal.model.SwipeLog', {
             type: 'string'
          }, {
             name: 'matched',
-            type: 'boolean',
-            convert: function (value, record) {
-               if(value) {
-                  return value.toUpperCase() != 'Y' ? false : true;
-               }
-            }
+            type: 'boolean'
          }, {
             name: 'error_short_description',
             type: 'string'

@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /home/kartik/apex/branches/suite-4504-attended-indication-att-details-portal/client/app.js
+// @require /home/jamil/www/apex/branches/suite-3993-register-attendance/client/app.js

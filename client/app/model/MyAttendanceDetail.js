@@ -25,14 +25,6 @@ Ext.define('StudentPortal.model.MyAttendanceDetail', {
          },{
             name: 'location_description',
             type: 'string'
-         },{
-            name: 'attended_ind',
-            type: 'boolean',
-            convert: function (value, record) {
-               if(value) {
-                  return value.toUpperCase() != 'Y' ? false : true;
-               }
-            }
          }
       ]
    }

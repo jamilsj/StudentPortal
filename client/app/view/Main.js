@@ -8,7 +8,11 @@ Ext.define('StudentPortal.view.Main', {
       'StudentPortal.view.Help',
       'StudentPortal.view.MyAbsences',
       'StudentPortal.view.SwipeLog',
-      'StudentPortal.view.Menu'
+      'StudentPortal.view.Menu',
+      'StudentPortal.view.RegisterAttendance',
+      'StudentPortal.view.CameraTest',
+      'StudentPortal.view.Maps'
+
    ],
    config: {
       layout: {
@@ -42,7 +46,7 @@ Ext.define('StudentPortal.view.Main', {
             }
          },         
          {
-            xtype: 'profile'
+            xtype: 'cameratest'
          }         
       ],
       listeners: {

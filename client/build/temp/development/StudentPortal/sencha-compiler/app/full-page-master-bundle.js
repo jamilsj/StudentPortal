@@ -1,2 +1,2 @@
 // @tag full-page
-// @require C:\Avr\apex\studentPortal\www\source\client\app.js
+// @require /home/kartik/apex/branches/suite-3993-register-attendance/client/app.js

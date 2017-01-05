@@ -18,22 +18,16 @@ Ext.define("StudentPortal.model.Absence", {
          { name : 'absence_reason',type: 'string' },
          { name : 'approved_ind',type: 'string' },
          { name : 'document',type: 'number' },
-         { name : 'end_date',type: 'string'},
+         { name : 'end_date',type: 'date'},
          { name : 'end_date_time',type: 'string',
-            convert: function(value, record) {
-               if (typeof value !== 'undefined') {
-                  var edt = value.split("T")[0] + " " +  value.split("T")[1].replace('Z','');
-                  return edt.substring( 0,( edt.length - 3 ) )
-               }
+            convert: function(value, record){
+               return Ext.util.Format.date(value, 'd/m/Y H:i');
             }
          },
-         { name : 'start_date',type: 'string' },
+         { name : 'start_date',type: 'date' },
          { name : 'start_date_time',type: 'string',
             convert: function(value, record){
-               if (typeof value !== 'undefined') {
-                  var sdt = value.split("T")[0] + " " + value.split("T")[1].replace('Z','');
-                  return sdt.substring( 0,( sdt.length - 3 ) )
-               }
+               return Ext.util.Format.date(value, 'd/m/Y H:i');
             }
          }
       ],
