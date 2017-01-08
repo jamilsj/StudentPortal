@@ -68,7 +68,7 @@
          console.log('navigator.getUserMedia error: ', error);
       });
 
-      videoSelect.onChange = this.startStream();
+      videoSelect.onChange = function(){ this.startStream() };
 
       this.startStream();
    }  
