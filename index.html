@@ -3,6 +3,7 @@
 <head>
 <script>
    function startStream(videoSelect){
+      debugger;
       var videoSource = document.querySelector('select#videoSource').value;
       var constraints = {
          video: {deviceId: videoSource ? {exact: videoSource} : undefined}
