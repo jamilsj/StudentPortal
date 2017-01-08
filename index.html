@@ -11,11 +11,11 @@
       navigator.getUserMedia(
          constraints,
          function(stream) {
-            if(window.stream){
-               window.stream.getTracks()[0].stop();
-            } else{
-               window.stream = stream;
-            }
+//             if(window.stream){
+//                window.stream.getTracks()[0].stop();
+//             } else{
+//                window.stream = stream;
+//             }
             
             video.src = window.URL.createObjectURL(stream);
             video.onloadedmetadata = function(e) {
