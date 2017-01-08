@@ -68,10 +68,7 @@
          console.log('navigator.getUserMedia error: ', error);
       });
 
-      videoSelect.onChange = function(){ 
-         debugger;
-         this.startStream() 
-      };
+      videoSelect.addEventListener("change", this.startStream);as
 
       this.startStream();
    }  
