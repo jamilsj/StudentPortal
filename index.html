@@ -7,17 +7,23 @@
       var constraints = {
          video: {deviceId: videoSource ? {exact: videoSource} : undefined}
       };
+      
+      if(window.stream){
+         window.stream.getTracks().forEach(function(track) {
+            track.stop();
+         });
+      }
 
       navigator.getUserMedia(
          constraints,
          function(stream) {
-            if(window.stream){
-               window.stream.getTracks().forEach(function(track) {
-                  track.stop();
-               });
-            } 
+//             if(window.stream){
+//                window.stream.getTracks().forEach(function(track) {
+//                   track.stop();
+//                });
+//             } 
             window.stream = stream;
-            debugger;
+            
             video.srcObject = stream;
 //             video.src = window.URL.createObjectURL(stream);
             
