@@ -13,7 +13,7 @@
             track.stop();
          });
       }
-debugger;
+
       navigator.getUserMedia(
          constraints,
          function(stream) {
@@ -32,6 +32,10 @@ debugger;
    }
 
    function listDevices (deviceInfos){
+      //
+      var video = document.querySelector('video');
+      var videoSelect = document.querySelector('select#videoSource');
+
       for (var i = 0; i !== deviceInfos.length; ++i) {
          var deviceInfo = deviceInfos[i];
          var option = document.createElement('option');
@@ -58,7 +62,6 @@ debugger;
          navigator.mozGetUserMedia;
 
       //
-      var video = document.querySelector('video');
       var videoSelect = document.querySelector('select#videoSource');
 
       //
