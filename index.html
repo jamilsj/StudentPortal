@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 <script>
-   function startStream(videoSelect){
+   function startStream(){
       var videoSource = document.querySelector('select#videoSource').value;
       var constraints = {
          video: {deviceId: videoSource ? {exact: videoSource} : undefined}
@@ -13,18 +13,12 @@
             track.stop();
          });
       }
-
+debugger;
       navigator.getUserMedia(
          constraints,
          function(stream) {
-//             if(window.stream){
-//                window.stream.getTracks().forEach(function(track) {
-//                   track.stop();
-//                });
-//             } 
             window.stream = stream;
-            
-//             video.srcObject = stream;
+
             video.src = window.URL.createObjectURL(stream);
             
             video.onloadedmetadata = function(e) {
@@ -37,13 +31,27 @@
       );
    }
 
-   function doIniCamera(){
-      // TO DO - Implement better way
-      // debugger;
-      // document.getElementById('video-container').innerHTML = '<div class="select">' +
-      //    '<label for="videoSource">Video source: </label><select id="videoSource"></select>' +
-      //    '</div><video id="video" width="' + (Ext.getBody().getWidth() - 50) + '" height="' + (Ext.getBody().getHeight() - 50) + '" autoplay></video>';
+   function listDevices (deviceInfos){
+      for (var i = 0; i !== deviceInfos.length; ++i) {
+         var deviceInfo = deviceInfos[i];
+         var option = document.createElement('option');
+         option.value = deviceInfo.deviceId;
 
+         // Only getting cameras. It can get microfone and speakers in the future
+         if (deviceInfo.kind === 'audioinput') {
+            //
+         } else if (deviceInfo.kind === 'audiooutput') {
+            //
+         } else if (deviceInfo.kind === 'videoinput') {
+            option.text = deviceInfo.label || 'camera ' + (videoSelect.length + 1);
+            videoSelect.appendChild(option);
+         } else {
+            console.log('Some other kind of source/device: ', deviceInfo);
+         }
+      }
+   }
+
+   function doIniCamera(){
       //
       navigator.getUserMedia = navigator.getUserMedia ||
          navigator.webkitGetUserMedia ||
@@ -54,31 +62,13 @@
       var videoSelect = document.querySelector('select#videoSource');
 
       //
-      navigator.mediaDevices.enumerateDevices().then(function(deviceInfos){
-         for (var i = 0; i !== deviceInfos.length; ++i) {
-            var deviceInfo = deviceInfos[i];
-            var option = document.createElement('option');
-            option.value = deviceInfo.deviceId;
-
-            // Only getting cameras. It can get microfone and in the future
-            if (deviceInfo.kind === 'audioinput') {
-               //
-            } else if (deviceInfo.kind === 'audiooutput') {
-               //
-            } else if (deviceInfo.kind === 'videoinput') {
-               option.text = deviceInfo.label || 'camera ' + (videoSelect.length + 1);
-               videoSelect.appendChild(option);
-            } else {
-               console.log('Some other kind of source/device: ', deviceInfo);
-            }
-         }
-      }).catch(function(error){
+      navigator.mediaDevices.enumerateDevices().then(listDevices).then(startStream).catch(function(error){
          console.log('navigator.getUserMedia error: ', error);
       });
 
       videoSelect.addEventListener("change", this.startStream);
 
-      this.startStream();
+      // this.startStream();
    }  
    // doIniCamera();
 </script>
