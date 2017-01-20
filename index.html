@@ -14,23 +14,8 @@
          });
       }
 
-      // navigator.getUserMedia(
-      //    constraints,
-      //    function(stream) {
-      //       window.stream = stream;
-
-      //       video.src = window.URL.createObjectURL(stream);
-            
-      //       video.onloadedmetadata = function(e) {
-      //          video.play();
-      //       };
-      //    },
-      //    function(err) {
-      //       console.log("The following error occurred: " + err.name);
-      //    }
-      // );
-
-      navigator.getUserMedia(constraints).then(
+      navigator.getUserMedia(
+         constraints,
          function(stream) {
             window.stream = stream;
 
@@ -39,10 +24,15 @@
             video.onloadedmetadata = function(e) {
                video.play();
             };
-      }).catch(
+
+            navigator.mediaDevices.enumerateDevices().then(listDevices).catch(function(error){
+               console.log('navigator.getUserMedia error: ', error);
+            });
+         },
          function(err) {
             console.log("The following error occurred: " + err.name);
-      });
+         }
+      );
    }
 
    function listDevices (deviceInfos){
