@@ -30,22 +30,23 @@
          }
       );
 
-      // navigator.mediaDevices.enumerateDevices().then(listDevices).then(unction listDevices (deviceInfos){
-      //    for (var i = 0; i !== deviceInfos.length; ++i) {
-      //       // Only getting cameras. It can get microfone and speakers in the future
-      //       if (deviceInfo.kind === 'audioinput') {
-      //          //
-      //       } else if (deviceInfo.kind === 'audiooutput') {
-      //          //
-      //       } else if (deviceInfo.kind === 'videoinput') {
-      //          debugger;
-      //       } else {
-      //          console.log('Some other kind of source/device: ', deviceInfo);
-      //       }
-      //    }
-      // }).catch(function(error){
-      //    console.log('navigator.getUserMedia error: ', error);
-      // });
+      navigator.mediaDevices.enumerateDevices().then(listDevices).then(unction listDevices (deviceInfos){
+         for (var i = 0; i !== deviceInfos.length; ++i) {
+                     var deviceInfo = deviceInfos[i];
+            // Only getting cameras. It can get microfone and speakers in the future
+            if (deviceInfo.kind === 'audioinput') {
+               //
+            } else if (deviceInfo.kind === 'audiooutput') {
+               //
+            } else if (deviceInfo.kind === 'videoinput') {
+               debugger;
+            } else {
+               console.log('Some other kind of source/device: ', deviceInfo);
+            }
+         }
+      }).catch(function(error){
+         console.log('navigator.getUserMedia error: ', error);
+      });
    }
 
    function listDevices (deviceInfos){
