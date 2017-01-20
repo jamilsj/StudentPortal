@@ -71,6 +71,19 @@
 
       videoSelect.addEventListener("change", this.startStream);
    }
+
+   function captureImage(){
+      var video = document.querySelector('video');
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext('2d');
+
+      if (window.stream) {
+         ctx.drawImage(video, 0, 0);
+         // "image/webp" works in Chrome.
+         // Other browsers will fall back to image/png.
+         document.querySelector('img').src = canvas.toDataURL('image/webp');
+      }
+   }
 </script>
 </head>
 <body onload="doIniCamera()">
@@ -78,5 +91,7 @@
       <label for="videoSource">Video source: </label><select id="videoSource"></select>
    </div>
    <video id="video" width="100" height="100" autoplay></video>
+   <button type="button" onclick="captureImage()">Capture!!!</button>
+   <canvas></canvas>
 </body>
 </html>
