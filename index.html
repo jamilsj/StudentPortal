@@ -96,11 +96,11 @@
    <div class="select">
       <label for="videoSource">Video source: </label><select id="videoSource"></select>
    </div>
-   <div style="width:100%; text-align: center; ">
-      <video id="video" style="width:10%;"></video>
-      <video id="video2" style="width:10%;"></video>
+   <div style="width:100%; position:relative">
+      <video id="video" style="width:10%; float:left;"></video>
+      <video id="video2" style="width:10%; position:absolute"></video>
    </div>
-   <div>
+   <div style="position:relative">
       <button type="button" onclick="captureImage()">Capture!!!</button>
    </div>
    <div>
