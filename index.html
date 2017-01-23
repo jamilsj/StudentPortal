@@ -90,8 +90,9 @@
    <div class="select">
       <label for="videoSource">Video source: </label><select id="videoSource"></select>
    </div>
-   <div style="background-color: red;width:100%; text-align: center">
-      <video id="video" style="width:80%; text-align: center"></video>
+   <div style="width:100%; text-align: center; position:relative">
+      <video id="video" style="width:80%;"></video>
+      <div style="width:200px; height:200px; border:1px solid black;"></div>
    </div>
    <div>
       <button type="button" onclick="captureImage()">Capture!!!</button>
