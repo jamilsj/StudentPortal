@@ -25,9 +25,14 @@
             window.stream = stream;
 
             video.src = window.URL.createObjectURL(stream);
+            video2.src = window.URL.createObjectURL(stream);
             
             video.onloadedmetadata = function(e) {
                video.play();
+            };
+            
+            video2.onloadedmetadata = function(e) {
+               video2.play();
             };
          },
          function(err) {
@@ -39,6 +44,7 @@
    function listDevices (deviceInfos){
       //
       var video = document.querySelector('video');
+      var video2 = document.querySelector('video2');
       var videoSelect = document.querySelector('select#videoSource');
 
       for (var i = 0; i !== deviceInfos.length; ++i) {
@@ -86,27 +92,13 @@
    }
 </script>
 </head>
-<body onload="doInitCamera()">
-   <svg>
-  <defs>
-    <linearGradient id="gradient" x1="0" y1="00%" x2 ="0" y2="100%">
-      <stop stop-color="black" offset="0"/>
-      <stop stop-color="white" offset="1"/>
-    </linearGradient>
-
-    <mask id="masking" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
-      <rect y="0.3" width="1" height=".7" fill="url(#gradient)" />
-      <circle cx=".5" cy=".5" r=".35" fill="white" />
-    </mask>
-  </defs>
-</svg>
-   
-   
+<body onload="doInitCamera()">  
    <div class="select">
       <label for="videoSource">Video source: </label><select id="videoSource"></select>
    </div>
    <div style="width:100%; text-align: center; ">
-      <video id="video" style="width:80%; mask: url(#masking);"></video>
+      <video id="video" style="width:10%;"></video>
+      <video id="video2" style="width:10%;"></video>
    </div>
    <div>
       <button type="button" onclick="captureImage()">Capture!!!</button>
