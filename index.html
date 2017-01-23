@@ -6,7 +6,11 @@
    function startStream(){
       var videoSource = document.querySelector('select#videoSource').value;
       var constraints = {
-         video: {deviceId: videoSource ? {exact: videoSource} : undefined}
+         video: {
+            deviceId: videoSource ? {exact: videoSource} : undefined, 
+            width: { min: 200, ideal: 500, max: 1000 },
+            height: { min: 200, ideal: 500, max: 1000 }
+         }
       };
       
       if(window.stream){
