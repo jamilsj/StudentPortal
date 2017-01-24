@@ -22,18 +22,19 @@
       navigator.getUserMedia(
          constraints,
          function(stream) {
+            //
+            var video = document.querySelector('video');
+
+            //
             window.stream = stream;
 
+            //
             video.src = window.URL.createObjectURL(stream);
-//             video2.src = window.URL.createObjectURL(stream);
-            
+
+            //
             video.onloadedmetadata = function(e) {
                video.play();
             };
-            
-//             video2.onloadedmetadata = function(e) {
-//                video2.play();
-//             };
          },
          function(err) {
             console.log("The following error occurred: " + err.name);
@@ -43,10 +44,9 @@
 
    function listDevices (deviceInfos){
       //
-      var video = document.querySelector('video');
-//       var video2 = document.querySelector('video2');
       var videoSelect = document.querySelector('select#videoSource');
 
+      //
       for (var i = 0; i !== deviceInfos.length; ++i) {
          var deviceInfo = deviceInfos[i];
          var option = document.createElement('option');
@@ -96,10 +96,9 @@
    <div class="select">
       <label for="videoSource">Video source: </label><select id="videoSource"></select>
    </div>
-   <div style="width:100%; position:relative">
-      <video id="video" style="width:10%; float:left;"></video>
-      <div style="width: 100px;height:100px;position:absolute;border: 5px dotted white"></div>
-<!--       <video id="video2" style="width:10%; position:absolute"></video> -->
+   <div style="position:relative; padding:20px; display:inline-block;">
+      <video id="video" style="width:100%; float:left;"></video>
+      <div style="width: 100px;height:100px; position:absolute; border: 3px dotted white"></div>
    </div>
    <div style="position:relative">
       <button type="button" onclick="captureImage()">Capture!!!</button>
