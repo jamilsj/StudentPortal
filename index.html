@@ -35,7 +35,9 @@
             video.onloadedmetadata = function(e) {
                video.play();
 
-               var photoArea = document.querySelector('div#photo-area'); 
+               var photoArea = document.querySelector('div#photo-area');
+               photoArea.setAttribute("height", photoArea.parentNode.getBoundingClientRect().width * 0.5)
+               photoArea.setAttribute("width", photoArea.parentNode.getBoundingClientRect().width * 0.5)
             };
          },
          function(err) {
