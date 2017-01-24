@@ -36,7 +36,6 @@
                video.play();
 
                var photoArea = document.querySelector('div#photo-area'); 
-               debugger;
             };
          },
          function(err) {
@@ -89,8 +88,6 @@
       var canvas = document.querySelector('canvas');
       var ctx = canvas.getContext('2d');
 
-      debugger;
-
       if (window.stream) {
          ctx.drawImage(video, 240, 0, 400, 400, 0, 0, 400, 400);
       }
@@ -101,7 +98,7 @@
    <div class="select">
       <label for="videoSource">Video source: </label><select id="videoSource"></select>
    </div>
-   <div style="position:relative; padding:20px; display:inline-block;">
+   <div style="width:100%; position:relative; padding:20px; display:inline-block;">
       <video id="video" style="width:100%; float:left;"></video>
       <div id="photo-area" style="width: 100px;height:100px; position:absolute; border: 3px dotted white"></div>
    </div>
