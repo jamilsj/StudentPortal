@@ -1,0 +1,1 @@
+{"id":"38a79d31-ab55-4958-8540-36e6d369d7f5","js":[{"path":"OpenCharts/lib/d3.min.js"},{"path":"OpenCharts/lib/nv.d3.min.js"},{"update":"delta","path":"app.js"}],"css":[{"update":"delta","path":"resources/css/nv.d3.min.css"},{"update":"delta","theme":"cupertino","path":"resources/css/cupertino.css"},{"update":"full","path":"resources/css/styles.css"}]}
